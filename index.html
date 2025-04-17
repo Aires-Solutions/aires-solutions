@@ -1,380 +1,571 @@
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors and modified for use by samson sang for ilakir and aires solutions">
-    <meta name="generator" content="Hugo 0.145.0">
-    <title>Aires Solutions</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/masonry/">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-
-    <link rel="apple-touch-icon" href="./assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="./assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="./assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="./assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="./assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="./assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#712cf9">
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aires Solutions | Software, Games & Robotics Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        .gradient-bg {
+            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
         }
-      }
-
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .bi {
-        width: 1em;
-        height: 1em;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .animated-robot {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .section-divider {
+            height: 100px;
+            background: linear-gradient(to bottom right, transparent 49%, white 50%), linear-gradient(to bottom left, transparent 49%, white 50%);
+            background-size: 50% 100%;
+            background-repeat: no-repeat;
+        }
     </style>
-
-    
-  </head>
-  <body>
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-  <symbol id="check2" viewBox="0 0 16 16">
-    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-  </symbol>
-  <symbol id="circle-half" viewBox="0 0 16 16">
-    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-  </symbol>
-  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-  </symbol>
-  <symbol id="sun-fill" viewBox="0 0 16 16">
-    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-  </symbol>
-</svg>
-
-
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-        id="bd-theme"
-        type="button"
-        aria-expanded="false"
-        data-bs-toggle="dropdown"
-        
-        aria-label="Toggle theme (auto)">
-  <svg class="bi my-1 theme-icon-active" aria-hidden="true"><use href="#circle-half"></use></svg>
-  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-</button>
-<ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-  <li>
-    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-      <svg class="bi me-2 opacity-50" aria-hidden="true"><use href="#sun-fill"></use></svg>
-      Light
-      <svg class="bi ms-auto d-none" aria-hidden="true"><use href="#check2"></use></svg>
-    </button>
-  </li>
-  <li>
-    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-      <svg class="bi me-2 opacity-50" aria-hidden="true"><use href="#moon-stars-fill"></use></svg>
-      Dark
-      <svg class="bi ms-auto d-none" aria-hidden="true"><use href="#check2"></use></svg>
-    </button>
-  </li>
-  <li>
-    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-      <svg class="bi me-2 opacity-50" aria-hidden="true"><use href="#circle-half"></use></svg>
-      Auto
-      <svg class="bi ms-auto d-none" aria-hidden="true"><use href="#check2"></use></svg>
-    </button>
-  </li>
-</ul>
-
-    </div>
-
-    
-<main class="container py-5">
-
-
-  <!-- header -->
-  <header data-bs-theme="dark">
-    <div class="collapse text-bg-dark" id="navbarHeader">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-md-7 py-4">
-            <h4>About</h4>
-            <p class="text-body-secondary">we leverage technology to make life easier using simple robots, more efficient with our softwares and fun with our games.</p>
-          </div>
-          <div class="col-sm-4 offset-md-1 py-4">
-            <h4>Contact</h4>
-            <ul class="list-unstyled">
-              <li><a href="https://x.com/SolutionsAires" class="text-white">Follow on X</a></li>
-              <li><a href="https://www.facebook.com/people/Aires-Solutions/61552285092550/?sk" class="text-white">Like on Facebook</a></li>
-              <li><a href="https://github.com/Aires-Solutions" class="text-white">Like on Github</a></li>
-              <li><a href="admin@ilakir.com" class="text-white">Email me</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-      <div class="container">
-        <a href="#" class="navbar-brand d-flex align-items-center">
-          <img src="./assets/images/favicon.1.2.png" width="20" height="20" />
-          <strong>Aires Solutions</strong>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-
-  <!-- catalog -->
-  <div class="row" data-masonry='{"percentPosition": true }'>
-    <div class="col-sm-6 col-lg-4 mb-4">
-      <div class="card">
-        <img src="./assets/images/samosaLogo.png" alt="samosaLogo">
-        <div class="card-body">
-          <h5 class="card-title">Samosa</h5>
-          <p class="card-text">A building automation system suitable for the internet of things applications.</p>
-        </div>
-      </div>
-    </div>
-
-      <div class="col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <img src="./assets/images/elGatosMobile.png" alt="samosaLogo">
-          <div class="card-body">
-            <h5 class="card-title">elGato Mobile</h5>
-            <p class="card-text">A wheelchair automation system.</p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <img src="./assets/images/fufi.png" alt="fufiLogo">
-          <div class="card-body">
-            <h5 class="card-title">fufi</h5>
-            <p class="card-text">A FUn and FITness application.</p>
-            <p>
-              <a href="https://play.google.com/store/apps/details?id=org.airesol.fufi">
-                <img role="button" src="./assets/images/playstoreLogo.png">
-              </a>
-
-            </p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <img src="./assets/images/wayaLogo.png" alt="wayaLogo">
-          <div class="card-body">
-            <h5 class="card-title">waya</h5>
-            <p class="card-text">A simple calculator for common electrical engineering and software calculations.</p>
-            <p>
-              <a href="https://play.google.com/store/apps/details?id=org.airesol.waya">
-                <img role="button" src="./assets/images/playstoreLogo.png">
-              </a>
-
-            </p>
-          </div>
-        </div>
-      </div>
-
-
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card">
-            <img src="./assets/images/gadafiLogo.png" alt="gadafiLogo">
-            <div class="card-body">
-              <h5 class="card-title">gadafi</h5>
-              <p class="card-text">A dictation app that assists users read laws.</p>
-              <p>
-                <a href="https://play.google.com/store/apps/details?id=org.airesol.gadafi.laws">
-                  <img role="button" src="./assets/images/playstoreLogo.png">
-                </a>
-  
-              </p>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-robot text-3xl text-purple-600"></i>
+                    <span class="text-2xl font-bold text-gray-800">Aires Solutions</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#solutions" class="text-gray-800 hover:text-purple-600 font-medium">Solutions</a>
+                    <a href="#work" class="text-gray-800 hover:text-purple-600 font-medium">Our Work</a>
+                    <a href="#culture" class="text-gray-800 hover:text-purple-600 font-medium">Culture</a>
+                    <a href="#careers" class="text-gray-800 hover:text-purple-600 font-medium">Careers</a>
+                    <a href="#contact" class="text-gray-800 hover:text-purple-600 font-medium">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
-          </div>
         </div>
+    </nav>
 
-
-
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card">
-            <img src="./assets/images/hayawaniCover.png" alt="hayawani cover">
-            <div class="card-body">
-              <h5 class="card-title">hayawani</h5>
-              <p class="card-text">Run away from the monsters and make sure they do not catch you.</p>
-              <p>
-                <a href="https://play.google.com/store/apps/details?id=org.airesol.hayawani">
-                  <img role="button" src="./assets/images/playstoreLogo.png">
-                </a>
-  
-              </p>
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0 fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Building the Future with Code & Circuits</h1>
+                <p class="text-xl mb-8">We create innovative software, immersive games, and intelligent robotics solutions that push technological boundaries.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="bg-white text-purple-600 px-8 py-3 rounded-full font-bold text-center hover:bg-gray-100 transition duration-300">Partner With Us</a>
+                    <a href="#careers" class="bg-transparent border-2 border-white px-8 py-3 rounded-full font-bold text-center hover:bg-white hover:text-purple-600 transition duration-300">Join Our Team</a>
+                </div>
             </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card">
-            <img src="./assets/images/crabpyLogo.png" alt="hayawani cover">
-            <div class="card-body">
-              <h5 class="card-title">crappy crabby</h5>
-              <p class="card-text">make sure you do not have a crappy day and avoid being crabby.</p>
-              <p>
-                <!-- <a href="https://play.google.com/store/apps/details?id=org.airesol.hayawani">
-                  <img role="button" src="./assets/images/playstoreLogo.png">
-                </a>
-   -->
-              </p>
+            <div class="md:w-1/2 flex justify-center fade-in">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1085&q=80" alt="Robot and code" class="rounded-lg shadow-2xl animated-robot max-w-md w-full">
             </div>
-          </div>
         </div>
+        <div class="section-divider"></div>
+    </section>
 
-
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card">
-            <img src="./assets/images/hayawaniCover.png" alt="hayawani cover">
-            <div class="card-body">
-              <h5 class="card-title">mandai</h5>
-              <p class="card-text">Run to the shop and get milk for mother while driving your car and avoiding dangers</p>
-              <p>
-                <a href="https://play.google.com/store/apps/details?id=com.AiresSolutions.mandai">
-                  <img role="button" src="./assets/images/playstoreLogo.png">
-                </a>  
-              </p>
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Technology Solutions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We specialize in cutting-edge development across multiple technology domains</p>
             </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card">
-            <img src="./assets/images/chemlete.png" alt="chemlete cover">
-            <div class="card-body">
-              <h5 class="card-title">chemlete</h5>
-              <p class="card-text">stabilize the solution using electrons so that it does not overflow.</p>
-              <p>
-                <a href="https://play.google.com/store/apps/details?id=org.airesol.chemlete">
-                  <img role="button" src="./assets/images/playstoreLogo.png">
-                </a>
-  
-              </p>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card">
-            <img src="./assets/images/foota.png" alt="foota cover">
-            <div class="card-body">
-              <h5 class="card-title">foota</h5>
-              <p class="card-text">learn the african cultures while playing football.</p>
-              <p>
-                <a href="https://play.google.com/store/apps/details?id=com.AiresSolutions.Foota">
-                  <img role="button" src="./assets/images/playstoreLogo.png">
-                </a>
-  
-              </p>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <div class="card p-3">
-            <figure class="p-3 mb-0">
-              <blockquote class="blockquote">
-                <p>We try to </p>
-              </blockquote>
-              <figcaption class="blockquote-footer mb-0 text-body-secondary">
-                At Aires, we leverage technology to make life easier using simple robots, more efficient with our softwares and fun with our games.<cite title="Source Title">The team</cite>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Software Development -->
+                <div class="bg-gray-50 rounded-xl p-8 tech-card transition duration-300">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Software Development</h3>
+                    <p class="text-gray-600 mb-4">Custom enterprise solutions, SaaS platforms, and mobile applications built with modern architectures.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>Web & Mobile Applications</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>Desktop Applications</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>AI/ML Integration</span>
+                        </li>
+                    </ul>
+                </div>
                 
-</main>
-<script defer src="../assets/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"></script>
+                <!-- Game Development -->
+                <div class="bg-gray-50 rounded-xl p-8 tech-card transition duration-300">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-gamepad text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Game Development</h3>
+                    <p class="text-gray-600 mb-4">Immersive gaming experiences across platforms with stunning graphics and engaging gameplay.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>Mobile & Console Games</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>VR/AR Experiences</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>Architectural Design Development</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- IoT & Robotics -->
+                <div class="bg-gray-50 rounded-xl p-8 tech-card transition duration-300">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">IoT & Robotics</h3>
+                    <p class="text-gray-600 mb-4">Smart connected devices and autonomous systems that transform industries and daily life.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>Farm Automation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>Smart Home Solutions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>Autonomous Systems</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script></body>
+    <!-- Our Work Section -->
+    <section id="work" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore some of our innovative solutions that are making an impact</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="./assets/images/samosaLogo.png" alt="AI Platform" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-purple-600 opacity-70"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-white text-xl font-bold">Samosa Platform</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Samosa System Suite</h3>
+                        <p class="text-gray-600 mb-4">An enterprise-grade IOT platform that provides real-time communication with a smart building.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Remote Viewing and Control</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Task Automation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="./assets/images/fufi.png" alt="fufi app" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-purple-600 opacity-70"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-white text-xl font-bold">fitness app</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Fufi fitness app</h3>
+                        <p class="text-gray-600 mb-4">A handy app that assists you to reach your fitness goals.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Motivation</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Goals tracking</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Progress tracking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="./projects.html" class="inline-block border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-full font-bold hover:bg-purple-600 hover:text-white transition duration-300">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Culture</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We foster an environment of innovation, collaboration, and continuous learning</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Innovation -->
+                <div class="text-center">
+                    <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lightbulb text-purple-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Innovation First</h3>
+                    <p class="text-gray-600">We encourage creative thinking and provide resources to turn ideas into reality through our internal incubator program.</p>
+                </div>
+                
+                <!-- Learning -->
+                <div class="text-center">
+                    <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-graduation-cap text-purple-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Continuous Learning</h3>
+                    <p class="text-gray-600">Annual learning budgets, tech conferences, and weekly knowledge-sharing sessions keep our team at the cutting edge.</p>
+                </div>
+                
+                <!-- Balance -->
+                <div class="text-center">
+                    <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-purple-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Work-Life Harmony</h3>
+                    <p class="text-gray-600">Flexible schedules, remote options, and unlimited PTO help our team maintain healthy work-life integration.</p>
+                </div>
+            </div>
+            
+            <div class="bg-purple-600 rounded-xl p-8 text-white">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-2/3 mb-6 md:mb-0">
+                        <h3 class="text-2xl font-bold mb-3">Our Values</h3>
+                        <p class="mb-4">These principles guide everything we do at Aires Solutions</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check mt-1 mr-3"></i>
+                                <span><strong>Curiosity:</strong> We ask questions, explore possibilities, and challenge assumptions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mt-1 mr-3"></i>
+                                <span><strong>Collaboration:</strong> We believe the best solutions come from diverse perspectives working together</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mt-1 mr-3"></i>
+                                <span><strong>Impact:</strong> We measure success by the positive difference our work makes in the world</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/3 flex justify-center">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Team working together" class="rounded-lg shadow-lg max-w-xs w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Join Our Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Work on exciting projects with cutting-edge technologies</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Benefits -->
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Why Work With Us</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="bg-purple-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-dollar-sign text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Competitive Compensation</h4>
+                                <p class="text-gray-600">Salary, bonuses, and equity packages that reward your contributions</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-purple-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-laptop-medical text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Comprehensive Benefits</h4>
+                                <p class="text-gray-600">Health, dental, vision, and mental health coverage for you and your family</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-purple-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-microchip text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Cutting-Edge Tech</h4>
+                                <p class="text-gray-600">Work with the latest hardware, software, and development tools</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-purple-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-globe-americas text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Global Impact</h4>
+                                <p class="text-gray-600">Build solutions used by millions of people worldwide</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Open Positions -->
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Current Openings</h3>
+                    <div class="space-y-4">
+                        <div class="border-b border-gray-200 pb-4">
+                            <h4 class="font-bold text-gray-800">Senior Robotics Engineer</h4>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">Full-time</span>
+                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">On-site/Hybrid</span>
+                            </div>
+                            <button class="text-purple-600 font-medium mt-3 hover:underline">View Details</button>
+                        </div>
+                        <div class="border-b border-gray-200 pb-4">
+                            <h4 class="font-bold text-gray-800">Gameplay Programmer</h4>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">Full-time</span>
+                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">Remote</span>
+                            </div>
+                            <button class="text-purple-600 font-medium mt-3 hover:underline">View Details</button>
+                        </div>
+                        <div class="border-b border-gray-200 pb-4">
+                            <h4 class="font-bold text-gray-800">IoT Solutions Architect</h4>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">Full-time</span>
+                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">On-site</span>
+                            </div>
+                            <button class="text-purple-600 font-medium mt-3 hover:underline">View Details</button>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">AI/ML Engineer</h4>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">Full-time</span>
+                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded-full text-xs">Hybrid</span>
+                            </div>
+                            <button class="text-purple-600 font-medium mt-3 hover:underline">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="inline-block bg-purple-600 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition duration-300 mr-4">See All Positions</a>
+                <a href="#" class="inline-block border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-full font-bold hover:bg-purple-600 hover:text-white transition duration-300">Internship Program</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Trusted By Industry Leaders</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We collaborate with innovative companies across industries</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <img src="https://via.placeholder.com/180x80?text=TechCorp" alt="TechCorp" class="h-12 object-contain opacity-70 hover:opacity-100 transition duration-300 mx-auto">
+                <img src="https://via.placeholder.com/180x80?text=GameWorks" alt="GameWorks" class="h-12 object-contain opacity-70 hover:opacity-100 transition duration-300 mx-auto">
+                <img src="https://via.placeholder.com/180x80?text=AutoBot" alt="AutoBot" class="h-12 object-contain opacity-70 hover:opacity-100 transition duration-300 mx-auto">
+                <img src="https://via.placeholder.com/180x80?text=CloudNine" alt="CloudNine" class="h-12 object-contain opacity-70 hover:opacity-100 transition duration-300 mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Build Something Amazing</h2>
+                <p class="text-xl max-w-3xl mx-auto">Whether you're looking to partner with us or join our team, we'd love to hear from you</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 border border-white border-opacity-20">
+                    <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                    <form>
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 font-medium">Your Name</label>
+                            <input type="text" id="name" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-white placeholder-white placeholder-opacity-70">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 font-medium">Email Address</label>
+                            <input type="email" id="email" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-white placeholder-white placeholder-opacity-70">
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block mb-2 font-medium">Subject</label>
+                            <select id="subject" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-white">
+                                <option value="" disabled selected>Select a topic</option>
+                                <option value="partnership">Business Partnership</option>
+                                <option value="careers">Careers</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="press">Press/Media</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 font-medium">Message</label>
+                            <textarea id="message" rows="4" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-white placeholder-white placeholder-opacity-70"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-purple-600 py-3 rounded-full font-bold hover:bg-gray-100 transition duration-300">Send Message</button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Our Headquarters</h4>
+                                <p>123 Innovation Drive<br>Tech Valley, CA 94000</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Email Us</h4>
+                                <p>hello@nexusinnovations.com<br>careers@nexusinnovations.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Call Us</h4>
+                                <p>+1 (555) 123-4567<br>Mon-Fri, 9am-5pm PST</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mt-10 mb-6">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-robot text-2xl text-purple-500"></i>
+                        <span class="text-xl font-bold">Aires Solutions</span>
+                    </div>
+                    <p class="text-gray-400">Building the future with innovative software, games, and robotics solutions.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Software Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Game Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">IoT Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Robotics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Our Work</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-6 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2023 Aires Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to handle smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.md\\:hidden button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animation for elements when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.tech-card, .animated-robot').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
 </html>
