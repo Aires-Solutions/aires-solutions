@@ -320,11 +320,10 @@
                                 <span class="ml-1 font-semibold">0.1</span>
                             </div> -->
                         </div>
-                        <p class="text-gray-600 mb-4">Fast-paced VR shooter with competitive multiplayer and esports potential.</p>
+                        <p class="text-gray-600 mb-4">Fast-paced VR shooter set in an african country where a riot is occuring over a tax increase.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">FPS</span>
                             <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">VR</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Esports</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-2">
@@ -335,10 +334,12 @@
                         </div>
                     </div>
                 </div>
+                <!-- more games -->
+                 <div id="fullGamesList"></div>
             </div>
             
             <div class="mt-12 text-center">
-                <button class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md font-semibold transition">View All Games</button>
+                <button onclick="openPage('games')" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md font-semibold transition">View All Games</button>
             </div>
         </div>
     </section>
@@ -807,6 +808,47 @@
             overlay.classList.add('hidden');
         }
 
+        // Open page
+        function openPage(pageName){
+            const gamePageDetails = document.getElementById('fullGamesList');
+
+            let html = '';
+            if(pageName === moreGames){
+                html = `
+                <!-- Game 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden game-card transition duration-300">
+                    <div class="relative h-64">
+                        <img src="assets/images/foota.png" alt="foota Game screenshot" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">MOBILE</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Foota</h3>
+                           <!-- <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="ml-1 font-semibold">4.7</span>
+                            </div> -->
+                        </div>
+                        <p class="text-gray-600 mb-4">A mobile sports game.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Soccer</span> 
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Mobile</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <i class="fab fa-android text-gray-500"></i>
+                            </div>
+                            <button onclick="openGameModal('foota')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                `;
+                gamePageDetails.innerHTML += html;
+            }
+        }
+
         // Game modal functions
         function openGameModal(gameName) {
             const modal = document.getElementById('game-modal');
@@ -925,7 +967,6 @@
                             <div class="bg-blue-50 p-4 rounded-lg">
                                 <h4 class="font-semibold mb-2">Available On:</h4>
                                 <div class="flex space-x-4">
-                                    <i class="fab fa-apple text-2xl text-gray-700"></i>
                                     <i class="fab fa-google-play text-2xl text-gray-700"></i>
                                     <i class="fab fa-android text-2xl text-gray-700"></i>
                                 </div>
