@@ -339,7 +339,7 @@
             </div>
             
             <div class="mt-12 text-center">
-                <button onclick="openMore(allGames)" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md font-semibold transition">View All Games</button>
+                <button onclick="openMore('allGames')" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md font-semibold transition">View All Games</button>
             </div>
         </div>
     </section>
@@ -810,10 +810,10 @@
 
         // Open page
         function openMore(pageName){
-            const gamePageDetails = document.getElementById('fullGamesList');
+            const gamePageDetails1 = document.getElementById('fullGamesList');
 
             let html = '';
-            if(pageName === allGames){
+            if(pageName === 'allGames'){
                 html = `
                 <!-- Game 4 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden game-card transition duration-300">
@@ -845,9 +845,10 @@
                     </div>
                 </div>
                 `;
-                gamePageDetails.innerHTML += html;
+//                gamePageDetails.innerHTML += html;
             }
-            document.body.appendChild(gamePageDetails);
+            gamePageDetails1.innerText  = html;
+            document.body.appendChild(gamePageDetails1);
         }
 
         // Game modal functions
