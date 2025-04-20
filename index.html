@@ -339,7 +339,7 @@
             </div>
             
             <div class="mt-12 text-center">
-                <button onclick="openPage('games')" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md font-semibold transition">View All Games</button>
+                <button onclick="openMore('moreGames')" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md font-semibold transition">View All Games</button>
             </div>
         </div>
     </section>
@@ -809,7 +809,7 @@
         }
 
         // Open page
-        function openPage(pageName){
+        function openMore(pageName){
             const gamePageDetails = document.getElementById('fullGamesList');
 
             let html = '';
