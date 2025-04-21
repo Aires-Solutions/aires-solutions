@@ -334,12 +334,14 @@
                         </div>
                     </div>
                 </div>
-                <!-- more games -->
-                 <div id="fullGamesList"></div>
+
             </div>
+
             
+                <!-- more games -->
+            <div id="fullGamesList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>            
             <div class="mt-12 text-center">
-                <button onclick="openMore('allGames')" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md font-semibold transition">View All Games</button>
+                <button onclick="openMore('allGames')" id="allGames" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md font-semibold transition">View All Games</button>
             </div>
         </div>
     </section>
@@ -811,6 +813,7 @@
         // Open page
         function openMore(pageName){
             const gamePageDetails = document.getElementById('fullGamesList');
+            const moreGamesBtn = document.getElementById('allGames');
 
             let html = '';
             if(pageName === 'allGames'){
@@ -844,11 +847,43 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Game 5 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden game-card transition duration-300">
+                    <div class="relative h-64">
+                        <img src="assets/images/mandai.png" alt="mandai Game screenshot" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">MOBILE</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Foota</h3>
+                           <!-- <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="ml-1 font-semibold">4.7</span>
+                            </div> -->
+                        </div>
+                        <p class="text-gray-600 mb-4">A mobile runner game with VR under development.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Runner</span> 
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Mobile</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <i class="fab fa-android text-gray-500"></i>
+                            </div>
+                            <button onclick="openGameModal('mandai')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">View Details</button>
+                        </div>
+                    </div>
+                </div>
                 `;
 //                gamePageDetails.innerHTML += html;
+
             }
             //gamePageDetails.body.appendChild(html);
             gamePageDetails.innerHTML += html;
+            moreGamesBtn.remove(); 
   //          document.body.appendChild(gamePageDetails1);
         }
 
@@ -1033,6 +1068,121 @@
                             </div>
                         </div>
                     </div>
+                `;
+            }else if (gameName === 'foota') {
+                html = `
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-1/2">
+                            <img src="" alt="${gameName}" class="w-full rounded-lg">
+                            <div class="mt-4 flex justify-between items-center">
+                                <div class="flex space-x-2">
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">FPS</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">VR</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Esports</span>
+                                </div>
+<!--                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span class="ml-1 font-semibold">4.8</span>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <h3 class="text-xl font-semibold mb-4">About the Game</h3>
+                            <p class="text-gray-600 mb-6">Step into the futuristic world of Kasongo, a competitive VR shooter that combines fast-paced action with tactical gameplay. Experience unparalleled immersion as you battle in stunning cyberpunk environments.</p>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold mb-2">Key Features:</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>Designed specifically for VR with intuitive controls</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>5v5 competitive matches with ranked play</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>12 unique heroes with special abilities</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>Regular esports tournaments with cash prizes</span>
+                                    </li>
+                                    <li class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>Cross-platform play between VR headsets</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Available On:</h4>
+                                <div class="flex space-x-4">
+                                    <i class="fab fa-oculus text-2xl text-gray-700"></i>
+                                    <i class="fab fa-steam text-2xl text-gray-700"></i>
+                                    <i class="fab fa-windows text-2xl text-gray-700"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                `;
+            } else if (gameName === 'mandai') {
+                html = `
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-1/2">
+                            <img src="./assets/images/subImages/mandai.png" alt="${gameName}" class="w-full rounded-lg">
+                            <div class="mt-4 flex justify-between items-center">
+                                <div class="flex space-x-2">
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Runner</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">VR</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Adventure</span>
+                                </div>
+<!--                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span class="ml-1 font-semibold">4.8</span>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <h3 class="text-xl font-semibold mb-4">About the Game</h3>
+                            <p class="text-gray-600 mb-6">Run through the African forest to get to the shop and buy milk for mother while evading and avoiding traps. Experience stunning jungle environments.</p>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold mb-2">Key Features:</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>Tilt to move capabilities</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>Beautiful environment</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>Fast paced as game proceeds</span>
+                                    </li>
+                                    <li class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>Cross-platform play currently on mobile soon VR headsets</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Available On:</h4>
+                                <div class="flex space-x-4">
+                                    <i class="fab fa-android text-2xl text-gray-700"></i>
+<!--                                    <i class="fab fa-oculus text-2xl text-gray-700"></i>
+                                    <i class="fab fa-steam text-2xl text-gray-700"></i>
+                                    <i class="fab fa-windows text-2xl text-gray-700"></i> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
                 `;
             }
             
