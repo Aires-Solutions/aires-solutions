@@ -277,64 +277,32 @@
                 <!-- App 2 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden game-card transition duration-300">
                     <div class="relative h-64">
-                        <img src="assets/images/hayawaniCover.png" alt="Game screenshot" class="w-full h-full object-cover">
+                        <img src="assets/images/gadafiLogo.png" alt="Gadafi screenshot" class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
                             <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">MOBILE</span>
                         </div>
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">Hayawani</h3>
+                            <h3 class="text-xl font-bold text-gray-800">Gadafi</h3>
                            <!-- <div class="flex items-center">
                                 <i class="fas fa-star text-yellow-400"></i>
                                 <span class="ml-1 font-semibold">4.7</span>
                             </div> -->
                         </div>
-                        <p class="text-gray-600 mb-4">A mobile running game.</p>
+                        <p class="text-gray-600 mb-4">A tool that allows reading laws, charters and constitutions.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Running</span> 
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Mobile</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Laws</span> 
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Constitution</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-2">
                                 <i class="fab fa-android text-gray-500"></i>
                             </div>
-                            <button onclick="openDetailsModal('Hayawani')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">View Details</button>
+                            <button onclick="openDetailsModal('gadafi')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">View Details</button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- App 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden game-card transition duration-300">
-                    <div class="relative h-64">
-                        <img src="https://images.unsplash.com/photo-1586182987320-4a8d3207c6c5?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" alt="Game screenshot" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-                            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">VR EXPERIENCE</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">Kasongo</h3>
-<!--                            <div class="flex items-center">
-                                <i class="fas fa-star text-yellow-400"></i>
-                                <span class="ml-1 font-semibold">0.1</span>
-                            </div> -->
-                        </div>
-                        <p class="text-gray-600 mb-4">Fast-paced VR shooter set in an african country where a riot is occuring over a tax increase.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">FPS</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">VR</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <div class="flex space-x-2">
-                                <i class="fab fa-oculus text-gray-500"></i>
-                                <i class="fab fa-steam text-gray-500"></i>
-                            </div>
-                            <button onclick="openDetailsModal('Kasongo')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">View Details</button>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
 
@@ -1433,7 +1401,65 @@
                     </div>                    
                 `;
             }
+            //gadafi
+            else if (detailTitle === 'gadafi') {
+                html = `
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-1/2">
+                            <img src="assets/images/gadafiCenter/1.png" alt="${detailTitle}" class="w-full rounded-lg">
+                            <div class="mt-4 flex justify-between items-center">
+                                <div class="flex space-x-2">
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Laws</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Constitutions</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Learn</span>
+                                </div>
+<!--                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span class="ml-1 font-semibold">4.8</span>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <h3 class="text-xl font-semibold mb-4">About the App</h3>
+                            <p class="text-gray-600 mb-6">Learn any law or constitution while you engage in other activities.</p>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold mb-2">Key Features:</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>choose voice</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>choose law or add one to be read</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>learn while you exercise or work</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Available On:</h4>
+                                <div class="flex space-x-4">
+                                    <a href="https://play.google.com/store/apps/details?id=org.airesol.gadafi.laws"><i class="fab fa-android text-2xl text-gray-700"></i></a>
+
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-lg">
+                           <!--     <button onclick="window.open('https://youtu.be/Wxzc4Ywoep8')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition">View Trailer</button>                             -->
+                                <a href="https://play.google.com/store/apps/details?id=org.airesol.gadafi.laws"><img src="./assets/images/playstoreLogo.png"></a>
+                            </div>                    
+                        </div>
+                    </div>                    
+                `;
+            }
             
+
+
             //IoT details
             else if (detailTitle === 'chucho') {
                 html = `
