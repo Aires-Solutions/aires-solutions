@@ -682,12 +682,12 @@
                         </div>
                     </div>
                     <div class="md:w-1/2">
-                        <form class="space-y-4">
+                        <form class="space-y-4" action="mailto:solutionsaires@gmail.com" method="post" enctype="text/plain">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <input id="visitorName" type="text" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <input id="visitorEmail" type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <select id="interest" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 <option>I'm interested in...</option>
                                 <option>Game Development</option>
                                 <option>Custom Software</option>
@@ -695,8 +695,20 @@
                                 <option>Robotics</option>
                                 <option>Other</option>
                             </select>
-                            <textarea placeholder="Tell us about your project" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"></textarea>
-                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-semibold transition">Get Started</button>
+                            <textarea id="aboutProject" placeholder="Tell us about your project" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"></textarea>
+                            <button onclick="populateFields()" type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-semibold transition">Get Started</button>
+                            <a href="mailto:samson@ilakir.com? cc=admin@ilakir.com& subject=selectclass">
+<a href="mailto:masteryoda@starwars.com? cc=skywalker@starwars.com& bcc=leia@starwars.com& subject=May%20the%20Force%20be%20with%20you&body=May%20the%20Force%20be'%20with%20us%20all%3A%0D%0A%0D%0ACheers%2C%0D%0AHappy%20Customer">I love star wars</a> 
+                            <script>
+                                function populateFields(){
+                                    const visitorName = document.getElementById('visitorName');
+                                    const visitorEmail = document.getElementById('visitorEmail');
+                                    const aboutProject = document.getElementById('aboutProject');
+                                    const interest = document.getElementById('interest');
+
+                                    var interestText = interest.options[interest.selectedIndex].text; //pllace this in subject field
+                                }
+                            </script>
                         </form>
                     </div>
                 </div>
@@ -1040,6 +1052,37 @@
                         <p class="text-gray-600 mb-4">A mobile runner game with VR under development.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Runner</span> 
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Mobile</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <i class="fab fa-android text-gray-500"></i>
+                            </div>
+                            <button onclick="openDetailsModal('mandai')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Game 6 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden game-card transition duration-300">
+                    <div class="relative h-64">
+                        <img src="assets/images/chemlete.png" alt="Chemlete Game Screenshot" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">MOBILE</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Chemlete                                                       </h3>
+                           <!-- <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="ml-1 font-semibold">4.7</span>
+                            </div> -->
+                        </div>
+                        <p class="text-gray-600 mb-4">A mobile shooting game.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Shoot</span> 
                             <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Mobile</span>
                         </div>
                         <div class="flex justify-between items-center">
@@ -1584,7 +1627,7 @@
                                         <span>upload cases to central server for accountability</span>
                                     </li>
                                     <li class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                                        <span>login to work</span>
+                                        <span>UNDER DEVELOPMENT</span>
                                     </li>
                                 </ul>
                             </div>
