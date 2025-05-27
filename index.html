@@ -1101,6 +1101,34 @@
             else if(pageName === allApps){
                 html = `
                 <!-- app 4-->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden game-card transition duration-300">
+                    <div class="relative h-64">
+                        <img src="assets/images/abirisa.png" alt="abiria screenshot" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">MOBILE</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Miradi</h3>
+                           <!-- <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="ml-1 font-semibold">4.7</span>
+                            </div> -->
+                        </div>
+                        <p class="text-gray-600 mb-4">A public transport system for collecting fare and notifying users of destinations.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Transport</span> 
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Utility</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <i class="fab fa-android text-gray-500"></i>
+                            </div>
+                            <button onclick="openDetailsModal('abiria')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
                 `
 
@@ -1647,7 +1675,63 @@
                         </div>
                     </div>                    
                 `;
-                }
+            }
+
+                else if (detailTitle === 'abiria') {
+                html = `
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-1/2">
+                            <img src="assets/images/abiria.png" alt="${detailTitle}" class="w-full rounded-lg">
+                            <div class="mt-4 flex justify-between items-center">
+                                <div class="flex space-x-2">
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Transport</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">IOT</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Share Ride</span>
+                                </div>
+<!--                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span class="ml-1 font-semibold">4.8</span>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <h3 class="text-xl font-semibold mb-4">About the App</h3>
+                            <p class="text-gray-600 mb-6">Book and manage passengers, share location and pay for transport.</p>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold mb-2">Key Features:</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>view location</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>pay fare</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>manage passengers</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Available On:</h4>
+                                <div class="flex space-x-4">
+                                    <a href="https://play.google.com/store/apps/details?id=org.airesol.abiria"><i class="fab fa-android text-2xl text-gray-700"></i></a>
+
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-lg">
+                           <!--     <button onclick="window.open('https://youtu.be/Wxzc4Ywoep8')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition">View Trailer</button>                             -->
+                                <a href="https://play.google.com/store/apps/details?id=org.airesol.abiria"><img src="./assets/images/playstoreLogo.png"></a>
+                            </div>                    
+                        </div>
+                    </div>                    
+                `;
+            }
             
             content.innerHTML = html;
             modal.classList.remove('modal-hidden');
