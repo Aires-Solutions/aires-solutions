@@ -13,7 +13,8 @@
 
 <!--    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script> -->
+    <script src="./assets/dist/js/anime.iife.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -367,13 +368,11 @@
     <script>feather.replace();</script>
     <script>
         // Simple animation for the hero section
-        anime({
-            targets: '.glow-text',
-            opacity: [0, 1],
-            translateY: [20, 0],
-            duration: 1000,
-            easing: 'easeOutExpo'
-        });
-    </script>
+        anime.targets = '.glow-text';
+        anime.opacity = [0, 1];
+        anime.translateY = [20, 0];
+        anime.duration = 1000;
+        anime.easing = 'easeOutExpo';
+    </script> 
 </body>
 </html>
