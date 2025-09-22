@@ -199,6 +199,9 @@
                                 <i class="fas fa-check-circle text-purple-500 mr-2"></i>
                                 <span>House cleaning robot.</span>
                             </li>
+                            <li>
+                                <h3 class="text-xl font-bold text-gray-800 mb-3" style="text-align: center;">starting at Ksh.366,855.25</h3>
+                            </li>
                         </ul>
                         <button onclick="openSolutionModal('Simba Package')" class="text-purple-600 font-semibold hover:text-purple-800 transition">Learn More →</button>
                     </div>
@@ -234,6 +237,9 @@
                                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                                 <span>Cleaning robot for estate</span>
                             </li>
+                            <li>
+                                <h3 class="text-xl font-bold text-gray-800 mb-3" style="text-align: center;">starting at Ksh.383,855.25</h3>
+                            </li>
                         </ul>
                         <button onclick="openSolutionModal('Ndovu Package')" class="text-green-600 font-semibold hover:text-green-800 transition">Learn More →</button>
                     </div>
@@ -256,7 +262,7 @@
     <section id="iot" class="py-16 px-4 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Smart &amp; <span class="text-blue-600">Home</span> Solutions</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Smart <span class="text-blue-600">Home</span> Solutions</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Transforming real estate with smart automation and connected systems.</p>
             </div>
             
@@ -413,8 +419,20 @@
                                 <option>Robotics</option>
                                 <option>Other</option>
                             </select>
-                            <textarea placeholder="Tell us about your project" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"></textarea>
-                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-semibold transition">Get Started</button>
+                            <textarea id="aboutProject" placeholder="Tell us about your project" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"></textarea>
+                            <button onclick="populateFields()" type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-semibold transition">Get Started</button>
+                            <a href="mailto:samson@ilakir.com? cc=admin@ilakir.com& subject=selectclass">
+<a href="mailto:samson@ilakir.com? cc=admin@ilakir.com& subject=selectclass">Contact us</a> 
+                            <script>
+                                function populateFields(){
+                                    const visitorName = document.getElementById('visitorName');
+                                    const visitorEmail = document.getElementById('visitorEmail');
+                                    const aboutProject = document.getElementById('aboutProject');
+                                    const interest = document.getElementById('interest');
+
+                                    var interestText = interest.options[interest.selectedIndex].text; //pllace this in subject field
+                                }
+                            </script>
                         </form>
                     </div>
                 </div>
