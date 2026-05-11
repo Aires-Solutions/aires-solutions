@@ -1110,9 +1110,11 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-2">
+                             <a href="https://play.google.com/store/apps/details?id=org.airesol.chemlete">
                                 <i class="fab fa-android text-gray-500"></i>
+                             </a>
                             </div>
-                            <button onclick="openDetailsModal('mandai')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">View Details</button>
+                            <button onclick="openDetailsModal('chemlete')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">View Details</button>
                         </div>
                     </div>
                 </div>
@@ -1410,7 +1412,71 @@
 
                     
                 `;
-            } else if (detailTitle === 'mandai') {
+            }else if(detailTitle === chemlete){
+                html = `
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-1/2">
+                            <img src="./assets/images/subImages/chemlete.png" alt="${detailTitle}" class="w-full rounded-lg">
+                            <div class="mt-4 flex justify-between items-center">
+                                <div class="flex space-x-2">
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">mobile</span>
+                               <!--     <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Desktop</span> -->
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Esports</span>
+                                </div>
+<!--                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span class="ml-1 font-semibold">4.8</span>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <h3 class="text-xl font-semibold mb-4">About the Game</h3>
+                            <p class="text-gray-600 mb-6">Enjoy a shooting game while learning the fundamentals of chemical reactions. </p>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold mb-2">Key Features:</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>combine elements</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>fast time currently included</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>great color matching</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>Includes the names of the elements.</span>
+                                    </li>
+                                    <li class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>play on android mobile</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Available On:</h4>
+                                <div class="flex space-x-4">
+                                    <i class="fab fa-android text-2xl text-gray-700"></i>
+                                    <img src="./assets/images/playstoreLogo.png"><a href="https://play.google.com/store/apps/details?id=org.airesol.chemlete"><i class="fab fa-android text-2xl text-gray-700"></i></a>
+                                    <i class="fab fa-linux text-2xl text-gray-700"></i>
+                                    <i class="fab fa-windows text-2xl text-gray-700"></i>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-lg">
+                               <!-- <button onclick="window.open('https://youtu.be/Wxzc4Ywoep8')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition">View Trailer</button>       -->                     
+                                <a href="https://play.google.com/store/apps/details?id=org.airesol.chemlete"><img src="./assets/images/playstoreLogo.png"></a>
+                            </div>                            
+                        </div>
+                    </div>
+
+                    
+                `;
+        }else if (detailTitle === 'mandai') {
                 html = `
                     <div class="flex flex-col lg:flex-row gap-8">
                         <div class="lg:w-1/2">
