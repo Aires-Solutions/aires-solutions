@@ -541,7 +541,7 @@
                         <div class="flex justify-between item-start mb-3">
                             <h3 class="text-x1 font-bold text-gray-800">samosa</h3>
                         </div>
-                        <p>A smart home system that assists users to automate their homes, farms and apartments.</p>
+                        <p class="text-gray-600 mb-4">A smart home system that assists users to automate their homes, farms and apartments.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 round-full">AI powered</span>
                             <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 round-full">Smart Home Systems</span>
@@ -552,7 +552,14 @@
                                     <i class="fab fa-android text-green-500"></i>
                                 </a>
                             </div>
-                            <button onclick="openDetailsModal('samosa')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 round-md transition">View Details</button>
+                            <button id="samosaBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 round-md transition">View Details</button>
+                            <script>
+                                const samosaButton = document.getElementById("samosaBtn");
+                                function handleClick(event){
+                                    window.open("./samosa.html", "_blank");
+                                }
+                                samosaButton.addEventListener("click", handleClick);
+                            </script>
                         </div>
                     </div>
                  </div>
@@ -661,7 +668,7 @@
                     <p class="text-gray-600 mb-6">Founded in 2018, We began as a small software and game development studio with a passion for making people's lives easier and enjoyable. As technology evolved, so did we, expanding into simple robots and IoT solutions.</p>
                     <p class="text-gray-600 mb-8">Today, we engineer, design, and innovate to improve society and are committed to pushing the boundaries of what's possible in digital technology.</p>
                     <p class="text-gray-600 mb-8">Ilakir media is the division responsible for gaming and entertainment</p>
-                    <p class="text-gray-600 mb-8">Please note the parent company, Aires Solutions, is located in Kenya and are not affiliated with Aires Solutions India.</p>
+                    <p class="text-gray-600 mb-8">Please note the parent company, Aires Solutions and Ilakir, are located in Kenya and are not affiliated with Aires Solutions India.</p>
                    <!-- <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition">Meet Our Team</button>
                         <button class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-md transition">Careers</button>
@@ -780,7 +787,7 @@
                 <div>
                     <div class="flex items-center mb-6">
                         <i class="fas fa-robot text-3xl text-blue-400 mr-3"></i>
-                        <span class="text-2xl font-bold">Aires Solutions</span>
+                        <span class="text-2xl font-bold">Aires Solutions and Ilakir</span>
                     </div>
                     <p class="text-gray-400 mb-6">Innovating at the intersection of entertainment and technology to create the digital experiences of tomorrow.</p>
                     <div class="flex space-x-4">
@@ -833,7 +840,7 @@
     <footer class="bg-gray-800 text-gray-400 py-6 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="mb-4 md:mb-0">© 2023 Aires Solutions. All rights reserved.</p>
+                <p class="mb-4 md:mb-0">© 2023 Aires Solutions and Ilakir. All rights reserved.</p>
                 <div class="flex space-x-6">
                     <a href="./privacy.html" class="hover:text-white transition">Privacy Policy</a>
                     <a href="./terms.html" class="hover:text-white transition">Terms of Service</a>
