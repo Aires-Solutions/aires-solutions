@@ -564,7 +564,7 @@
                     </div>
                  </div>
 
-                 <!-- samosa system -->
+                 <!-- el gato system -->
                  <div class="bg-white rounded-x1 shadow-lg overflow-hidden game-card transition duration-300">
                     <div class="relative h-64">
                         <img src="assets/images/elGatosMobile.png" alt="samosa sytem" class ="w-full h-full object-cover">
@@ -586,7 +586,7 @@
                                 <a href="https://github.com/SimpleSamson/gatos" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github text-green-500"></i>
                                 </a>
-                            </div>
+                            </div>                            
                             <a class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 round-md transition" role="button" href="https://github.com/SimpleSamson/gatos">View Details</a>
                            <!-- <script>
                                 const samosaButton = document.getElementById("samosaBtn");
@@ -602,9 +602,11 @@
 
 
             <!-- more IOT -->
-            <div id="fullIoTList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>            
+            <div style="margin-top: 35px;"></div>
+            <div id="fullIOTList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>            
+            <div style="margin-top: 35px;"></div>
             <div class="mt-12 text-center">
-                <button onclick="openMore('allIoT')" id="allIoT" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md font-semibold transition">View All Games</button>
+                <button onclick="openMore('allIoT')" id="allIoT" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md font-semibold transition">View All IOT</button>
             </div> 
         </div>
     </section>
@@ -1095,6 +1097,8 @@
             const moreGamesBtn = document.getElementById('allGames');
             const moreAppsDetails = document.getElementById('fullAppsList');
             const moreAppsBtn = document.getElementById('allApps');
+            const IOTPageDetails = document.getElementById('fullIOTList');
+            const moreIOTBtn = document.getElementById('allIoT');
 
             let html = '';
             if(pageName === 'allGames'){
@@ -1213,7 +1217,7 @@
                 <!-- app 4 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden game-card transition duration-300">
                     <div class="relative h-64">
-                        <img src="assets/subImages/.png" alt="abiria screenshot" class="w-full h-full object-cover">
+                        <img src="assets/images/pubTrans.png" alt="abiria screenshot" class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
                             <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">AI</span>
                         </div>
@@ -1232,15 +1236,20 @@
                             <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Utility</span>
                         </div>
                         <div class="flex justify-between items-center">
-                            <div class="flex space-x-2">
-                                <i class="fab fa-AI text-green-500"></i>
-                            </div>
 
-                            <button onclick="openDetailsModal('waya')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">View Details</button>
+
+                            <a href="https://github.com/SimpleSamson/car-driving-robot" target="_blank" rel="noopener noreferrer">
+                                 <i class="fab fa-github text-green-500"></i>
+                            </a>
+                            
+                            <a class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 round-md transition" role="button" href="https://github.com/SimpleSamson/car-driving-robot">View Details</a>
+
                         </div>
                     </div>
                 </div>
                 `
+                IOTPageDetails.innerHTML += html;
+                moreIOTBtn.remove();
             }
             //all apps
             else if(pageName === 'allApps'){
