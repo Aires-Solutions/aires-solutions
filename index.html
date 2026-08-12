@@ -4,7 +4,8 @@
     <title>Technology Solutions | Game Development &amp; IoT Innovation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" src="./assets/dist/css/custom-css.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #000428 0%, #004e92 100%);
@@ -608,6 +609,61 @@
             <div class="mt-12 text-center">
                 <button onclick="openMore('allIoT')" id="allIoT" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md font-semibold transition">View All IOT</button>
             </div> 
+        </div>
+    </section>
+
+
+<!-- AI Showcase-->
+    <section id="AI" class="py-16 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our <span class="text-blue-600">AI Portfolio</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">LLM and complete AI systems that assist in automating.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- IoT 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden game-card transition duration-300">
+                    <div class="relative h-64">
+                        <i class="fa-solid fa-university text-6xl w-full h-full object-cover" style="font-size:10pc;"></i>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">under development</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">university administrator agent</h3>
+                            <!-- <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="ml-1 font-semibold">2.2</span>
+                            </div> -->
+                        </div>
+                        <p class="text-gray-600 mb-4">A system that assists university administrators by communicating with students as they perform other duties.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Uses Code</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Distributed Servers</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Operational Efficiency</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <a href="https://huggingface.co/spaces/SimpleSam/university_administrator_agent" target="_blank" rel="noopener noreferrer">
+                                 <i class="fab fa-hugging-face text-green-500"></i>
+                                </a>
+                            </div>
+                            <button onclick="openDetailsModal('universityadminagent')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- more IOT -->
+<!--            <div style="margin-top: 35px;"></div>
+            <div id="fullIOTList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>            
+            <div style="margin-top: 35px;"></div>
+            <div class="mt-12 text-center">
+                <button onclick="openMore('allIoT')" id="allIoT" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md font-semibold transition">View All AI</button>
+            </div> -->
         </div>
     </section>
 
@@ -2241,6 +2297,63 @@
                         </div>
                     </div>                    
                 `;
+            }else if (detailTitle == 'universityadminagent') {
+                html = `
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-1/2">
+                            <img src="https://pbs.twimg.com/profile_images/1616349273460719617/r4gpyY-D_400x400.jpg" alt="${detailTitle}" class="w-full rounded-lg">
+                            <div class="mt-4 flex justify-between items-center">
+                                <div class="flex space-x-2">
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Education</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">AI</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Chat Bot</span>
+                                </div>
+<!--                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span class="ml-1 font-semibold">4.8</span>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <h3 class="text-xl font-semibold mb-4">About the App</h3>
+                            <p class="text-gray-600 mb-6">Communicate with students, university clients and potential customers on university details such as exams, course and grading.</p>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold mb-2">Key Features:</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>view results</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>get department details</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                        <span>get course details</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Available Online:</h4>
+                                <div class="flex space-x-4">
+                                    <a href="https://huggingface.co/spaces/SimpleSam/university_administrator_agent" target="_blank" rel="noopener noreferrer">
+                                        <!-- <i class="fab fa-globe text-2xl text-green-500"></i>-->
+                                        <i class="fab fa-hugging-face text-2xl text-green-500"></i>
+                                        </a>
+
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-lg">
+                           <!--     <button onclick="window.open('https://youtu.be/Wxzc4Ywoep8')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition">View Trailer</button>                             -->
+                                <a href="https://huggingface.co/spaces/SimpleSam/university_administrator_agent" target="_blank" rel="noopener noreferrer"><button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition">View</a>
+                            </div>                    
+                        </div>
+                    </div>                    
+                `;                
             }
             
             content.innerHTML = html;
