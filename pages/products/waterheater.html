@@ -314,7 +314,7 @@
 
             <!-- Right Side: Product Details & Purchase Options -->
             <div class="details-container">
-                <h2>IMPOSOL Non-Pressurized Heat Pipe Solar Water Heater (Stainless Steel Appearance)</h2>
+                <h2 id="productTitle">IMPOSOL Non-Pressurized Heat Pipe Solar Water Heater (Stainless Steel Appearance)</h2>
                 <p style="color: #4b5563;">High-efficiency thermal systems configured with copper anti-freeze heat pipes and food-grade stainless steel storage tanks. Perfect for multi-family residential setups or large commercial rooftop configurations.</p>
                 
                 <div class="price-box">
@@ -346,27 +346,24 @@
                     </ul>
                 </div>
 
-                <button class="btn btn-primary" onclick="alert('Inquiry added to quote sheet.')">Request Commercial Invoice</button>
-            
+                <button class="btn btn-primary bg-blue-700" onclick="sendEnquiry()">Request Commercial Invoice</button>
+
         </div>
     </div>
-<div class="xx">
-                    <p>Non Pressure system</p>
-                    <p>cost effective</p>
-                    <h3 class="text-2xl">Main specifications :</h3>
-<p>1) Inner tank: Food grade stainless steel SUS304-1.2mm-365mm</p>
-<p>2) Outer tank:Food grade stainless steel SUS201-0.4mm 
-470mm </p>
-<p>3) 80mm distance between vacuum tubes</p>
-<p>4) Insulation: Polyurethane 55mm</p>
-<p>5) Vacuum tube: ALN/ALN-SS/CU coating 58/1800mm </p>
-<p>6) Heat pipe : OD.8mm*0.6mm Oxygen free copper anti-freeze </p>
-heat pipe OD.14mm*1mm condenser, Total length 1700mm</p>
-<p>7) 0.25mm pure aluminium fin , length 1620mm </p>
-<p>6) Frame: Stainless steel SUS 201-1.2mm(SS)</p>
-<p>7) Stainless steel SUS 304 bolts</p>
-<p>8) Silicone seal ring and dust ring</p>
-<p>9) 3/4' or 1/2' inlet,outlet,air vent stainless steel SUS304- </p>
+    <div class="xx">
+        <h3 class="text-2xl text-center">Main specifications</h3>
+        <p><b>Inner tank:</b> Food grade stainless steel SUS304-1.2mm-365mm</p>
+        <p><b>Outer tank:</b> Food grade stainless steel SUS201-0.4mm 470mm </p>
+        <p><b>Vacuum tubes:</b> 80mm distance between vacuum tubes</p>
+        <p><b>Insulation:</b> Polyurethane 55mm</p>
+        <p><b>Vacuum tube:</b> ALN/ALN-SS/CU coating 58/1800mm </p>
+        <p><b>Heat pipe:</b> OD.8mm*0.6mm Oxygen free copper anti-freeze </p>
+        <p><b>Frame:</b> Stainless steel SUS 201-1.2mm(SS)</p>
+        <p><b>pipe:</b> OD.14mm*1mm condenser, Total length 1700mm</p>
+        <p>0.25mm pure aluminium fin , length 1620mm </p>
+        <p> Stainless steel SUS 304 bolts</p>
+        <p> Silicone seal ring and dust ring</p>
+        <p> 3/4' or 1/2' inlet,outlet,air vent stainless steel SUS304- </p>
 </div>
 
 
@@ -423,7 +420,8 @@ heat pipe OD.14mm*1mm condenser, Total length 1700mm</p>
 
     
     
-
+</div>
+<div>
     <!-- Contact Section -->
     <section id="contact" class="py-16 px-4 bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto">
@@ -485,7 +483,7 @@ heat pipe OD.14mm*1mm condenser, Total length 1700mm</p>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-400 py-6 px-4">
+    <footer class="bg-gray-800 text-gray-400 py-6 px-4" style="margin-top: 0;">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <p class="mb-4 md:mb-0">© 2023 Aires Solutions and Ilakir. All rights reserved.</p>
@@ -497,7 +495,7 @@ heat pipe OD.14mm*1mm condenser, Total length 1700mm</p>
             </div>
         </div>
     </footer>
-
+</div>
 
     <script>
         // Mobile menu toggle
@@ -543,8 +541,8 @@ heat pipe OD.14mm*1mm condenser, Total length 1700mm</p>
         const normalPrice = selectedOption.getAttribute('data-normal');
         const tubes = selectedOption.getAttribute('data-tubes');
         const area = selectedOption.getAttribute('data-area');
-        document.getElementById('priceDisplay').innerText = $${discountPrice};
-        document.getElementById('normalPriceDisplay').innerText = $${normalPrice};
+        document.getElementById('priceDisplay').innerText = discountPrice;
+        document.getElementById('normalPriceDisplay').innerText = normalPrice;
         document.getElementById('tubeDisplay').innerText = tubes;
         document.getElementById('areaDisplay').innerText = area;
         }
@@ -555,6 +553,23 @@ heat pipe OD.14mm*1mm condenser, Total length 1700mm</p>
         event.currentTarget.classList.add('active');
         }
 
+    function sendEnquiry() {
+            let title=document.getElementById("productTitle");
+            descriptionElement=document.getElementById("modelSelect");
+            let subject=title.innerText;
+
+            const selectedText=descriptionElement.options[descriptionElement.selectedIndex].text;
+           // let messageText = subject.concat("I would like to purchase :", selectedText);
+           let emailStart = "Dear sir/madam,\n"
+
+            let messageText=emailStart.concat( "With regards to ", subject , " I would like to purchase :", selectedText);
+
+            const mailLinkUrl=`mailto:samson@ilakir.com?cc=admin@ilakir.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageText)}`;
+
+
+            window.location.href=mailLinkUrl;
+            window.alert('Opening mail to send. Please wait');
+        }
     </script>
 <!-- <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: relative; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank">DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=SimpleSam/grocery-app" style="color: #fff;text-decoration: underline;" target="_blank">Remix</a></p> -->
 </body></html>
