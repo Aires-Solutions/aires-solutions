@@ -154,7 +154,7 @@
                         <i class="fas fa-solid fa-house text-white text-6xl"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Chui Package</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3" id="solution-modal-title">Chui Package</h3>
                         <p class="text-gray-600 mb-4">Suitable for student rooms, small homes, apartment units, shops and offices.</p>
                         <ul class="space-y-2 mb-6">
                             <li class="flex items-center">
@@ -183,7 +183,7 @@
                         <i class="fas fa-solid fa-building text-white text-6xl"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Simba Package</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3"  id="solution-modal-title">Simba Package</h3>
                         <p class="text-gray-600 mb-4">Suitable for several apartment units and large homes and offices.</p>
                         <ul class="space-y-2 mb-6">
                             <li class="flex items-center">
@@ -217,7 +217,7 @@
                         <i class="fas fa-solid fa-city text-white text-6xl"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Ndovu Package</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3" id="solution-modal-title">Ndovu Package</h3>
                         <p class="text-gray-600 mb-4">Suitable for Large Apartment buildings and estates.</p>
                         <ul class="space-y-2 mb-6">
                             <li class="flex items-center">
@@ -522,6 +522,62 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+        }
+        // Solution modal functions
+        function openSolutionModal(solutionName) {
+            const modal = document.getElementById('solution-modal');
+            const overlay = document.getElementById('solution-overlay');
+            const title = document.getElementById('solution-modal-title');
+            const content = document.getElementById('solution-modal-content');
+            
+            title.textContent = solutionName;
+            
+            // Generate dynamic content based on solution
+            let html = '';
+            if (solutionName === 'Chui Package') {
+                html = `
+                <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-1/2">
+                            <img src="./assets/images/smartHome/chuiPkg.png" alt="Chui Package" class="w-full rounded-lg">
+                        </div>
+                        <div class="lg:w-1/2">
+                            <h3 class="text-xl font-semibold mb-4">Comprehensive Game Development Services</h3>
+                            <p class="text-gray-600 mb-4">From concept to launch, we handle every aspect of game development with expertise across all platforms and genres.</p>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold mb-2">Our Capabilities:</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Full-cycle game development for mobile, PC, and consoles</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>VR/AR game development with cutting-edge immersion</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Multiplayer and cloud gaming solutions</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Game design, artwork, animation, and sound production</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Porting and optimization across platforms</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Why Choose Us?</h4>
+                                <p class="text-gray-600">With 6 games developed, we combine creative vision with technical excellence to deliver unforgettable gaming experiences.</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
         }
 
         // Smooth scrolling for anchor links
