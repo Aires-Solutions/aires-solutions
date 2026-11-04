@@ -516,6 +516,28 @@
             </div>
         </div>
     </footer>
+    <!-- Solution Modal -->
+    <div id="solution-modal" class="fixed inset-0 flex items-center justify-center z-50 modal modal-hidden">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold" id="solution-modal-title">Solution Details</h2>
+                    <button onclick="closeSolutionModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <div id="solution-modal-content">
+                    <!-- Content will be loaded here dynamically -->
+                </div>
+                
+                <div class="mt-8">
+                    <button onclick="closeSolutionModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="solution-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden" onclick="closeSolutionModal()"></div>
 
     <script>
         // Mobile menu toggle
@@ -538,7 +560,95 @@
                 html = `
                 <div class="flex flex-col lg:flex-row gap-8">
                         <div class="lg:w-1/2">
-                            <img src="./assets/images/smartHome/chuiPkg.png" alt="Chui Package" class="w-full rounded-lg">
+                            <img src="./assets/images/smartHome/ChuiPkg.png" alt="Chui Package" class="w-full rounded-lg">
+                        </div>
+                        <div class="lg:w-1/2">
+                            <h3 class="text-xl font-semibold mb-4">Chui Package</h3>
+                            <p class="text-gray-600 mb-4">Our Chui package includes.</p>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold mb-2">Our Capabilities:</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>2 outdoor CCTV cameras</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Gate automation</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Door Automation</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Network enabled so you can operate and monitor from any location</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Porting and optimization across platforms</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Who it is made for?</h4>
+                                <p class="text-gray-600">This package is made for apartments and family homes.</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (solutionName == 'Simba Package') {
+                html = `
+                <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-1/2">
+                            <img src="./assets/images/smartHome/SimbaPkg.png" alt="Chui Package" class="w-full rounded-lg">
+                        </div>
+                        <div class="lg:w-1/2">
+                            <h3 class="text-xl font-semibold mb-4">Medium Level Services</h3>
+                            <p class="text-gray-600 mb-4">From security to house cleaning, we handle a wide range of services.</p>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-semibold mb-2">Offer Details:</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>7 smart weather-proof CCTV cameras outside and inside house for maximum 24/7 security.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Automation of 3 doors.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Security servies that includes a security guard on request at the location.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Remote monitoring services from anywhere in the world.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>A cleaning robot for maintaining clean floors.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold mb-2">Who this is for?</h4>
+                                <p class="text-gray-600">Medium size homes and farms.</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (solutionName == 'Ndovu Package') {
+                html = `
+                <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="lg:w-1/2">
+                            <img src="./assets/images/smartHome/NdovuPkg.png" alt="Chui Package" class="w-full rounded-lg">
                         </div>
                         <div class="lg:w-1/2">
                             <h3 class="text-xl font-semibold mb-4">Comprehensive Game Development Services</h3>
@@ -576,8 +686,19 @@
                             </div>
                         </div>
                     </div>
-                `;
+                `;                
             }
+
+            content.innerHTML = html;
+            modal.classList.remove('modal-hidden');
+            overlay.classList.remove('hidden');
+        }
+
+        function closeSolutionModal() {
+            const modal = document.getElementById('solution-modal');
+            const overlay = document.getElementById('solution-overlay');
+            modal.classList.add('modal-hidden');
+            overlay.classList.add('hidden');
         }
 
         // Smooth scrolling for anchor links
