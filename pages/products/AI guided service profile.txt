@@ -1,0 +1,63 @@
+Service:
+Sourcing and selling of robots, automation technology and building softwares and AI systems
+
+Customer profiles:
+1. Realtors and home owners
+2. Government
+3. Working professionals who are too busy to perform menial repetitive chores
+4. Elderly and sick people
+5. Gyms
+AI Feedback
+
+Service clarity
+You’ve identified a broad service area: sourcing and selling robots, automation tech, building software, and AI systems. That’s a real market, but it’s currently very wide (consumer home robots + government + building software + AI systems). To make your offer feel like a clear freelance service, consider tightening it into something like: “I help clients select, procure, and implement robotics/automation/AI solutions (vendor sourcing + requirements definition + integration support).”
+
+Customer profiles check (you listed 5)
+You met the “at least five” requirement. Now the key is alignment—some of your profiles fit well as-is, while others need clearer use-cases tied to your service.
+
+How well each profile matches
+---1) Realtors and homeowners: Plausible if you focus on smart-home automation or security/maintenance robots. Realtors specifically would need a strong reason (e.g., smart-building upgrades that increase property value or help sell homes faster).
+
+2) Government: Potentially relevant but too broad. Governments buy through procurement processes; you’d want to narrow this to departments/agencies with clear needs (public safety surveillance systems, facility management automation, permit/workflow digitization).
+
+3) Busy working professionals needing help with chores: This fits consumer/home robotics (robot vacuums/mops/lawn care), but as a freelance business it may be hard unless you’re offering consultation/setup/subscription concierge services rather than one-off sales.
+
+4) Elderly and sick people: Strong match for assistive tech if you focus on caregiving support devices (medication reminders, fall detection integrated systems, companion robots), plus installation/training/support.
+
+5) Gyms: Could fit if you’re thinking cleaning robots after hours, access control automation, member management software/AI analytics—but spell out which problems you solve for gyms.
+
+Suggestions to refine your target audience
+Right now your customer set mixes consumer buyers with institutional buyers. Consider choosing one primary lane first:
+
+Lane A: B2B / facilities & operations automation. Better-aligned customer profiles could include commercial property managers/facility managers, warehouses/logistics companies, manufacturers/small factories wanting process automation, hospitals/clinics needing workflow/building automation and compliance-friendly systems.
+
+Lane B: Home & assistive robotics concierge/service provider. Better-aligned profiles could include families caring for elderly relatives at home، high-income households wanting full smart-home setup، home healthcare providers who deploy assistive devices across patients.
+
+Please reply with two quick clarifications so I can tell whether these are the best-fit customers:
+1) Are you mainly targeting businesses/government (B2B/B2G) or individual consumers (B2C)?< br >2) When you say “building softwares,” do you mean construction/building design tools (BIM), building management systems (BMS), or general business software?
+Samson Sang
+B2C
+building management systems as well as smart home automation
+AI Feedback
+
+Good—your service is now much clearer
+With B2C + building management systems/smart home automation, your freelance offer can be framed as: sourcing the right smart-home/automation products and coordinating setup/integration (devices, apps, routines), plus optional ongoing support.
+
+Your customer profiles: what fits best and what to adjust
+Strong matches: homeowners (including high-income households), busy professionals, elderly/sick people. These groups have clear needs for smart-home convenience, safety, monitoring, and reduced manual chores.
+
+Needs refinement: “Realtors” are more B2B than B2C; if you keep them in a B2C-focused plan, reposition as “home sellers who want smart upgrades before listing” or “new home buyers who want move-in automation.”
+
+Not aligned with B2C as written: government is generally not a consumer profile. If you’re committing to B2C, replace it with a consumer segment that buys for homes.
+
+Relevant B2C customer profile examples you can use (pick at least two to replace/upgrade)
+Homeowners of large homes or multi-floor houses needing whole-home coverage (Wi‑Fi mesh + sensors + cameras).
+---Parents/families wanting child safety and monitoring (door/window sensors, indoor air quality alerts).
+---Short-term rental hosts (Airbnb) who need smart locks/cameras/noise monitors and remote access control.
+---People with disabilities needing accessibility automations (voice control, automated doors/lights/blinds).
+---New homeowners doing renovations who want wiring-free automation plans from day one.
+
+One suggestion to make your service feel “freelance” vs just “selling devices”
+Package it into outcomes clients understand: “Smart Home Setup & Integration,” “Home Safety Automation,” or “Elderly Assistive Smart-Home Bundle,” including product selection across brands + installation coordination + app/routine configuration + handover training.
+
+Please rewrite your list of customer profiles so it’s clearly B2C-only and includes at least five distinct types of customers. Keep each profile specific (who they are + what they need automated).
